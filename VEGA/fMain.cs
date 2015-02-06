@@ -30,10 +30,8 @@ namespace VEGA
             Framework.Bot.Packet.Parsing.OnLogMsg += new Framework.Bot.Packet.Parsing.LogMsg(onLogMsg);
             Framework.Proxy.Main.OnLogMsg += new Framework.Proxy.Main.LogMsg(onLogMsg);
 
-            Framework.Bot.Packet.Parsing.OnAddForm += new Framework.Bot.Packet.Parsing.AddForm(onAddForm);
-            Framework.Bot.Packet.Parsing.OnShowForm += new Framework.Bot.Packet.Parsing.ShowForm(onShowForm);
+            Framework.Bot.Packet.Parsing.OnAddForm += new Framework.Bot.Packet.Parsing.AddForm(onAddForm);            
             Framework.Bot.Packet.Parsing.OnAddMsgToForm += new Framework.Bot.Packet.Parsing.AddMsgToForm(onAddMsgToForm);
-            Framework.Bot.Packet.Parsing.OnAddControls += new Framework.Bot.Packet.Parsing.AddControls(OnAddControls);
 
             fLoader loader = new fLoader();
             Thread thSplash = new Thread(new ThreadStart(SplashScreen));
@@ -179,10 +177,6 @@ namespace VEGA
             tcChats.Controls.Find("tp" + pmReceiver, true)[0].Controls.Find("txt" + pmReceiver, true)[0].Text = "";
         }
 
-        private void OnAddControls(String charName)
-        {
-            //ListBox lb = (ListBox)Framework.Global.BotGlobal.activeConversations[charName].Controls.Find("lbChat", true)[0];
-        }
 
         private void onAddMsgToFormSelf(String msg, String Receiver)
         {
@@ -226,15 +220,6 @@ namespace VEGA
         private void onShowForm(String charName)
         {
             TabPage tp = Framework.Global.BotGlobal.activeConversations[charName];
-
-            if (tp.InvokeRequired)
-            {
-             
-            }
-            else
-            {
-              
-            }
         }
        
         private void btnSendGlobal_Click(object sender, EventArgs e)
