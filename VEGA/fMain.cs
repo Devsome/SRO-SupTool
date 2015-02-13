@@ -30,7 +30,8 @@ namespace VEGA
             Framework.Bot.Packet.Parsing.OnLogMsg += new Framework.Bot.Packet.Parsing.LogMsg(onLogMsg);
             Framework.Proxy.Main.OnLogMsg += new Framework.Proxy.Main.LogMsg(onLogMsg);
 
-            Framework.Bot.Packet.Parsing.OnAddForm += new Framework.Bot.Packet.Parsing.AddForm(onAddForm);            
+            Framework.Bot.Packet.Parsing.OnAddForm += new Framework.Bot.Packet.Parsing.AddForm(onAddForm);
+            Framework.Bot.Packet.Parsing.OnShowForm += new Framework.Bot.Packet.Parsing.ShowForm(onShowForm);
             Framework.Bot.Packet.Parsing.OnAddMsgToForm += new Framework.Bot.Packet.Parsing.AddMsgToForm(onAddMsgToForm);
 
             fLoader loader = new fLoader();
@@ -42,7 +43,7 @@ namespace VEGA
 
             thSplash.Abort();
             InitializeComponent();
-            //AllocConsole();
+            //AllocConsole(); // Shows the console
         }
 
         private void SplashScreen()

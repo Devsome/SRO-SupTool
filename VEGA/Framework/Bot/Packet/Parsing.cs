@@ -17,6 +17,7 @@ namespace VEGA.Framework.Bot.Packet
         public delegate void UpdateInventory();
         public static event LogMsg OnLogMsg;
         public static event AddForm OnAddForm;
+        public static event ShowForm OnShowForm;
         public static event AddControls OnAddControls;
         public static event AddMsgToForm OnAddMsgToForm;
 
